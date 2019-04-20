@@ -1,0 +1,33 @@
+package com.capgemini.springboottesting.controllertest;
+
+import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+
+import com.capgemini.springboottesting.entity.Person;
+import com.capgemini.springboottesting.service.PersonService;
+
+@ExtendWith(SpringExtension.class)
+@SpringBootTest
+@AutoConfigureMockMvc
+public class PersonControllerTest {
+	
+	@MockBean
+	private PersonService service;
+	
+	@Autowired
+	private MockMvc mockMvc;
+	
+	Person person = new Person(101,"Rasika");
+	@Test
+	public void testAddPerson() {
+		Mockito.when(service.addPerson(person)).thenReturn(person);
+	}
+
+}

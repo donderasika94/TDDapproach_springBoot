@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="SpringboottestingApplicationTests" project="springboottesting" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="com.capgemini.springboottesting.SpringboottestingApplicationTests" time="0.343">
+    <testcase name="testPersonName" classname="com.capgemini.springboottesting.SpringboottestingApplicationTests" time="0.033"/>
+    <testcase name="testFindById" classname="com.capgemini.springboottesting.SpringboottestingApplicationTests" time="0.233"/>
+    <testcase name="testAddPerson" classname="com.capgemini.springboottesting.SpringboottestingApplicationTests" time="0.004"/>
+    <testcase name="contextLoads" classname="com.capgemini.springboottesting.SpringboottestingApplicationTests" time="0.069"/>
+    <testcase name="testPersonId" classname="com.capgemini.springboottesting.SpringboottestingApplicationTests" time="0.004"/>
+  </testsuite>
+</testrun>

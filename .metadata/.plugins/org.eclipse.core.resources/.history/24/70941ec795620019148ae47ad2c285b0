@@ -1,0 +1,5 @@
+package com.capgemini.springboottesting.service;
+
+public interface PersonService {
+
+}

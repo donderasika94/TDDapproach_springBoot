@@ -1,0 +1,46 @@
+package com.capgemini.springboottesting;
+
+import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
+
+import com.capgemini.springboottesting.controller.PersonController;
+import com.capgemini.springboottesting.entity.Person;
+import com.capgemini.springboottesting.service.PersonService;
+
+@ExtendWith(SpringExtension.class)
+@AutoConfigureMockMvc
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class SpringboottestingApplicationTests {
+
+	@Autowired
+	PersonController controller;
+	
+	@MockBean
+	private PersonService service;
+	
+	@Autowired
+	private MockMvc mockMvc;
+//	
+//	@Test
+//	public void contextLoads() {
+//		assertThat(controller).isNotNull();
+//	}
+
+	
+	Person person = new Person(101,"Rasika");
+	@Test
+	public void testAddPerson() {
+		Mockito.when(service.addPerson(person)).thenReturn(person);
+	}
+
+}
