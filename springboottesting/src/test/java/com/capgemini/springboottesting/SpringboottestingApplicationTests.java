@@ -45,9 +45,10 @@ public class SpringboottestingApplicationTests {
 	}
 
 	
-	Person person = new Person(101,"Rasika");
+	
 	@Test
 	public void testAddPerson() {
+		Person person = new Person(101,"Rasika");
 		Mockito.when(service.addPerson(person)).thenReturn(person);
 	}
 	
